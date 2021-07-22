@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Bosh sahifa{% endblock title %}
+{% block content %}
+    {% if user.is_authenticated %}
+    <p><dt>{{user.username}}, saytga hush kelibsiz</p>
+    {% else %}
+    <p>Siz hali saytga kirmagansiz</p>
+    {% endif %}
+    <div class="jumbotron text-center">
+        <h1 class='display-4'>Yangliklar sayti</h1>
+        <p class='lead'>Eng so'ngi yangliklar faqat bizda</p>
+        <p class='lead'>
+            <a class='btn btn-primary btn-lg' href="{% url 'article_list' %}">Barcha maqolalarni ko'rish</a>
+        </p>
+    </div>
+{% endblock content %}
